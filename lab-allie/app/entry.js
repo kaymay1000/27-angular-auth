@@ -1,6 +1,6 @@
 'use strict';
 
-// require('./scss/main.scss');
+require('./scss/base/main.scss');
 // require('./scss/reset.scss');
 
 const path = require('path');
@@ -31,11 +31,8 @@ context.keys().forEach(key => {
 
 context = require.context('./component/', true, /\.js$/);
 context.keys().forEach(key => {
-  console.log('name', key)
   let name = camelcase(path.basename(key, '.js'));
-  console.log('name', name)
 
   let module = context(key);
-  console.log('module', module)
   routesApp.component(name, module);
 });
