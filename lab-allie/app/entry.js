@@ -7,9 +7,10 @@ const path = require('path');
 const camelcase = require('camelcase');
 const pascalcase = require('pascalcase');
 const angular = require('angular');
-const uiRouter = require('@uirouter/angularjs');
+require('@uirouter/angularjs');
 
 const routesApp = angular.module('routesApp', ['ui.router']);
+// const routesApp = angular.module('routesApp', ['uiRouter']);
 
 let context = require.context('./config/', true, /\.js$/);
 context.keys().forEach(key => routesApp.config(context(key)));
@@ -30,7 +31,11 @@ context.keys().forEach(key => {
 
 context = require.context('./component/', true, /\.js$/);
 context.keys().forEach(key => {
+  console.log('name', key)
   let name = camelcase(path.basename(key, '.js'));
+  console.log('name', name)
+
   let module = context(key);
+  console.log('module', module)
   routesApp.component(name, module);
 });

@@ -8,7 +8,7 @@
   <div
   ng-if="landingCtrl.showSignup">
     <div>
-      <signup></signup>
+      <signup-controller></signup-controller>
       <p>Already a Member?</p>
       <a href="/#!/login"
         ng-click="landingCtrl.showSignup=false">
@@ -20,7 +20,7 @@
   <div
     ng-if="!landingCtrl.showSignup">
     <div>
-      <login></login>
+      <login-controller></login-controller>
       <p>Want to sign up?</p>
       <a href="/#!/signup"
         ng-click="landingCtrl.showSignup=true">

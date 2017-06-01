@@ -5,7 +5,7 @@ module.exports = [
   '$log',
   '$http',
   '$window',
-  'authService',
+  // 'authService',
   function($q, $log, $http, $window, authService) {
     $log.debug('Auth-Service');
     

@@ -26,6 +26,20 @@ module.exports = [
         controllerAs: 'landingCtrl',
       },
       // {
+      //   name: 'login',
+      //   url: '/login',
+      //   template: require('../component/landing/login/login.html'),
+      //   controller: 'LoginController',
+      //   controllerAs: 'loginCtrl',
+      // },
+      // {
+      //   name: 'signup',
+      //   url: '/signup',
+      //   template: require('../component/landing/signup/signup.html'),
+      //   controller: 'SignupController',
+      //   controllerAs: 'signupCtrl',
+      // },
+      // {
       //   name: 'gallery',
       //   url: '/gallery',
       //   template: require('../view/gallery/gallery.html'),
