@@ -14,7 +14,7 @@
     "jasmine": true
   },
   "globals": {
-    "__API_URI__": false,
+    "__API_URI__": true,
     "__DEBUG__": false
   },
   "ecmaFeatures": {

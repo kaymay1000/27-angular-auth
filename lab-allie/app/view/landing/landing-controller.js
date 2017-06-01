@@ -1,14 +1,14 @@
 'use strict';
 
-require('./_landing.scss');
+// require('./_landing.scss');
 
 module.exports = ['$log',
   '$location',
-  '$rootScope',
-  'authService',
-  function($log, $location, $rootScope, authService) {
+  // '$rootScope',
+  // 'authService',
+  function($log, $location) {
   // this.$onInit = () => {
-    $log.debug('SignupController');
+    $log.debug('LandingController');
     
     this.title = 'Please sign in!';
     
