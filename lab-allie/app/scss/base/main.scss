@@ -1,0 +1,35 @@
+// ** VARS ** //
+$brand-primary: #7C7A7A;
+$brand-background: #444444;
+$brand-links: #000000;
+$brand-text: #ffffff;
+$padding: 3%;
+$margin: 0px auto;
+$brand-main-font: Helvetica;
+$brand-secondary-font: "Copperplate";
+
+// ** BASE STYLES ** //
+* {
+  background-color: $brand-background;
+  padding: $padding;
+  margin: $margin;
+}
+
+a {
+  color: $brand-text;
+  size: 1.5em;
+  font-family: $brand-secondary-font;
+  &:hover {
+    color: $brand-links;
+  }
+}
+
+h1 {
+  color: $brand-primary;
+  font-family: $brand-main-font;
+}
+
+#welcome {
+  color: $brand-text;
+  font-size: 3em;
+}
