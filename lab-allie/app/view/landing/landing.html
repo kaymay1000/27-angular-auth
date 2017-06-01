@@ -1,0 +1,32 @@
+<section>
+  <h1>{{ signupCtrl.title }}</h1>
+  <a href="/#!/home">Home</a>
+  <a href="/#!/signup">Sign-up</a>
+  <a href="/#!/gallery">Gallery</a>
+</section>
+
+<section>
+  <div
+  ng-if="landingCtrl.showSignup">
+    <div>
+      <signup></signup>
+      <p>Already a Member?</p>
+      <a href="/#!/join#login"
+        ng-click="landingCtrl.showSignup=false">
+          Sign-in here
+        </a>
+    </div>
+  </div>
+  
+  <div
+    ng-if="!landingCtrl.showSignup">
+    <div>
+      <p>Want to sign up?</p>
+      <a href="/#!/join#signup"
+        ng-click="landingCtrl.showSignup=true">
+        Sign up here
+      </a>
+    </div>
+    
+  </div>
+</section>
