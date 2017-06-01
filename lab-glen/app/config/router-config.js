@@ -1,12 +1,12 @@
-'use strict'
+'use strict';
 
 module.exports = ['$stateProvider', '$urlRouterProvider', routerConfig]
 
 function routerConfig($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.when('', '/home')
-  $urlRouterProvider.when('/', '/join#signup')
-  $urlRouterProvider.when('/signup', '/join#signup')
-  $urlRouterProvider.when('/login', '/join#login')
+  $urlRouterProvider.when('', '/home');
+  $urlRouterProvider.when('/', '/join#signup');
+  $urlRouterProvider.when('/signup', '/join#signup');
+  $urlRouterProvider.when('/login', '/join#login');
 
   let routes = [
     {
@@ -14,7 +14,7 @@ function routerConfig($stateProvider, $urlRouterProvider) {
       url: '/home',
       template: require('../view/home/home.html'),
       controller: 'HomeController',
-      controllerAs: 'homeCtrl'
+      controllerAs: 'homeCtrl',
     },
     {
       name: 'landing',

@@ -2,7 +2,7 @@
   "name": "glen-lab-27",
   "version": "1.0.0",
   "description": "",
-  "main": "karma.conf.js",
+  "main": "entry.js",
   "directories": {
     "test": "test"
   },
