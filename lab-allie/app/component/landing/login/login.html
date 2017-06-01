@@ -18,7 +18,7 @@
       </div>
       <div
       ng-class="{
-        'error': loginForm.password.$invalid,
+        'error': loginForm.password.$invalid && loginForm.$submitted,
         'success': loginForm.password.$valid
       }">
       <input type="password" name="password"

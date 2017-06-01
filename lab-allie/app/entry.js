@@ -9,7 +9,7 @@ const pascalcase = require('pascalcase');
 const angular = require('angular');
 const uiRouter = require('@uirouter/angularjs');
 
-const routesApp = angular.module('routesApp', ['ui.router'])
+const routesApp = angular.module('routesApp', ['ui.router']);
 
 let context = require.context('./config/', true, /\.js$/);
 context.keys().forEach(key => routesApp.config(context(key)));
@@ -21,16 +21,16 @@ context.keys().forEach(key => {
   routesApp.controller(name, context(key));
 });
 
-context = require.context('./service/', true, /\.js$/)
+context = require.context('./service/', true, /\.js$/);
 context.keys().forEach(key => {
-  let name = camelcase(path.basename(key, '.js'))
+  let name = camelcase(path.basename(key, '.js'));
   let module = context(key);
   routesApp.service(name, module);
 });
 
-context = require.context('./component/', true, /\.js$/)
+context = require.context('./component/', true, /\.js$/);
 context.keys().forEach(key => {
-  let name = camelcase(path.basename(key, '.js'))
+  let name = camelcase(path.basename(key, '.js'));
   let module = context(key);
   routesApp.component(name, module);
 });

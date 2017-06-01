@@ -1,10 +1,12 @@
 'use strict';
 
-module.exports = ['$q',
+module.exports = [
+  '$q',
   '$log',
   '$http',
   '$window',
-  function($q, $log, $http, $window) {
+  'authService',
+  function($q, $log, $http, $window, authService) {
     $log.debug('Auth-Service');
     
     let service = {};
@@ -29,15 +31,15 @@ module.exports = ['$q',
       if(token) return $q.resolve(token);
       
       return $q.reject(new Error('Token not found'));
-    }
+    };
     
     service.logout = function() {
       $log.debug('#logout');
       
       $window.localStorage.removeItem('token');
       token = null;
-      $q.resolve();
-    }
+      return $q.resolve();
+    };
     
     service.signup = function(user) {
       $log.debug('#signup');
@@ -46,9 +48,9 @@ module.exports = ['$q',
       let config = {
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        }
-      }
+          'Accept': 'application/json',
+        },
+      };
       
       return $http.post(url, user, config)
       .then(res => {
@@ -58,8 +60,8 @@ module.exports = ['$q',
       .catch(err => {
         $log.error('failure', err.message);
         return $q.reject(err);
-      })
-    }
+      });
+    };
     
     service.login = function(user) {
       $log.debug('#login');
@@ -70,9 +72,9 @@ module.exports = ['$q',
       let config = {
         headers: {
           Accept: 'application/json',
-          Authorization: `Basic ${base64}`
-        }
-      }
+          Authorization: `Basic ${base64}`,
+        },
+      };
       
       return $http.get(url, config)
       .then(res => {
@@ -81,10 +83,10 @@ module.exports = ['$q',
       })
       .catch(err => {
         $log.error('failure', err.message);
-        return $q.reject(console.error())
-      })
-    }
+        return $q.reject(err);
+      });
+    };
     
     return service;
-  }
-]
+  },
+];

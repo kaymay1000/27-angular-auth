@@ -1,18 +1,20 @@
 'use strict';
 
-require('./_signup.scss');
+require('./_landing.scss');
 
 module.exports = ['$log',
   '$location',
   '$rootScope',
-  function($log, $location, $rootScope) {
-    // this.$onInit = () => {
-      $log.debug('SignupController');
-      
-      this.title = 'Please sign in!';
-      
-      let url = $location.url();
-      
-      this.showSignup = url === '/join#signup' || url === '/join';
-  // };
-}];
+  'authService',
+  function($log, $location, $rootScope, authService) {
+  // this.$onInit = () => {
+    $log.debug('SignupController');
+    
+    this.title = 'Please sign in!';
+    
+    let url = $location.url();
+    
+    this.showSignup = url === '/join#signup' || url === '/join';
+    // };
+  },
+];
