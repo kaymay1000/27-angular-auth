@@ -1,0 +1,36 @@
+// @import './scss/view/gallery/_gallery.scss'
+// @import './scss/view/home/_home.scss'
+// @import './scss/view/signup/_signup.scss'
+
+$color-black: #000;
+$color-gray: #444;
+$color-lightgray: #888;
+$padding: 5px;
+$font-family-primary: cursive;
+$font-size-primary: 28px;
+$font-size-secondary: 20px;
+
+body {
+  text-align: center;
+}
+
+h1 {
+  font-size: $font-size-primary;
+  font-family: $font-family-primary;
+  color: $color-black;
+  padding: $padding;
+}
+
+h2 {
+  font-size: $font-size-secondary;
+  font-family: $font-family-primary;
+  color: $color-gray;
+  padding: $padding;
+}
+
+a {
+  font-size: $font-size-secondary;
+  font-family: $font-family-primary;
+  color: $color-lightgray;
+  padding: $padding;
+}
