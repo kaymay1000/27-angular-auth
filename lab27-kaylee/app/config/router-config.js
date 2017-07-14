@@ -20,11 +20,11 @@ module.exports = [
       {
         name: 'landing',
         url: '/join',
-        template: require('../view/landing/landing.html'),
+        template: require('../view/signup/landing.html'),
         controller: 'LandingController',
         controllerAs: 'landingCtrl'
       }
     ]
-
-    routes.forEach(route => $stateProvider.state(route))
-  }]
+    routes.forEach($stateProvider.state)
+  }
+]

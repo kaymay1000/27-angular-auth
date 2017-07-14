@@ -5,7 +5,7 @@ module.exports = [
   '$log',
   '$http',
   '$window',
-  function($q, $log, $http, $window) {
+  function($q, $log, $http, $window, authService) {
     $log.debug('Auth-Service')
 
     let service = {}
@@ -24,13 +24,12 @@ module.exports = [
     service.getToken = function() {
       $log.debug('#getToken')
 
-      if(token) $q.resolve(token)
+      if(token) return $q.resolve(token)
 
       token = $window.localStorage.getItem('token')
-      if(token) $q.resolve(token)
+      if(token) return $q.resolve(token)
 
       return $q.reject(new Error('token not found'))
-
     }
 
     service.logout = function() {
@@ -38,7 +37,7 @@ module.exports = [
 
       $window.localStorage.removeItem('token')
       token = null
-      $q.resolve()
+      return $q.resolve()
     }
 
     service.signup = function(user) {
@@ -63,7 +62,7 @@ module.exports = [
       })
     }
 
-    service.login = function() {
+    service.login = function(user) {
       $log.debug('#login')
 
       let url = `${__API_URL__}/api/login`
@@ -86,4 +85,5 @@ module.exports = [
       })
     }
     return service
-  }]
+  }
+]

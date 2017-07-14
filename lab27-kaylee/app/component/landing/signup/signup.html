@@ -2,21 +2,22 @@
   <form
     ng-submit="signupCtrl.signup(signupCtrl.user)"
     novalidate>
-    <input type="text"
-    placeholder="name"
+    <div><input
+    type="text"
+    placeholder="username"
     ng-minlength="4"
-    ng-model="signupCtrl.user.username" required>
-
-    <input type="text"
+    ng-model="signupCtrl.user.username"
+    required></div>
+    <div><input
+    type="text"
     placeholder="email"
-    ng-model="signupCtrl.user.email">
-
-    <input type="password"
+    ng-model="signupCtrl.user.email"></div>
+    <input
+    type="text"
     placeholder="password"
     ng-minlength="3"
-    ng-model="signupCtrl.user.passworld">
-
-    <input type="submit"
-    value="sign up">
+    ng-model="signupCtrl.user.password"
+    required>
+    <button ng-click="signupCtrl.signup(signupCtrl.user)" type="submit">Sign Up</button>
   </form>
 </section>

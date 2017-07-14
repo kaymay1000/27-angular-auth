@@ -2,9 +2,8 @@
 
 // require('./_home.scss')
 
-module.exports = ['$log', function($log) {
-  this.$onInit = () => {
-    $log.debug('#HomeController')
-    this.title = 'Welcome to the Home Page!'
-  }
-}]
+module.exports = ['$log', HomeController]
+
+function HomeController($log) {
+  $log.debug('#HomeController')
+}

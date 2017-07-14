@@ -10,9 +10,9 @@ dotenv.load()
 
 const production = process.env.NODE_ENV === 'production'
 
-const plugins = [
-  new HTMLPlugin({ template: `${__dirname}/app/index.html` }),
+let plugins = [
   new ExtractTextPlugin('bundle.css'),
+  new HTMLPlugin({ template: `${__dirname}/app/index.html` }),
   new webpack.DefinePlugin({
     __API_URL__: JSON.stringify(process.env.API_URL),
     __DEBUG__: JSON.stringify(!production)
@@ -53,7 +53,7 @@ module.exports = {
       },
       {
         test: /\.(eot|woff|ttf|svg).*/,
-        use: 'url?limit=10000&name=font/[hash].[ext]'
+        use: 'file-loader'
       },
       {
         test: /\.scss$/,

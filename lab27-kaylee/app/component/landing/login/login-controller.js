@@ -21,5 +21,6 @@ module.exports = {
         authService.login(this.user)
         .then(() => $location.url('/home'))
       }
-    }]
+    }
+  ]
 }
